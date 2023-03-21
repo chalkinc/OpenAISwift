@@ -41,8 +41,8 @@ public enum OpenAIModelType {
 
         /// Most capable GPT-4 model. Can do any task the other models can do, often with higher quality, longer output and better instruction-following. Also supports inserting completions within text.
         ///
-        /// > Model Name: text-davinci-003
-        case gpt4 = "text-davinci-003"
+        /// > Model Name: gpt-4
+        case gpt4 = "gpt-4"
     }
     
     /// A set of models that can understand and generate natural language
