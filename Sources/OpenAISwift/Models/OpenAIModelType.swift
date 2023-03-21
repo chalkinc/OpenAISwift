@@ -9,6 +9,9 @@ import Foundation
 
 /// The type of model used to generate the output
 public enum OpenAIModelType {
+    /// ``GPT4`` Family of Models
+    case gpt4(GPT4)
+
     /// ``GPT3`` Family of Models
     case gpt3(GPT3)
     
@@ -23,11 +26,23 @@ public enum OpenAIModelType {
     
     public var modelName: String {
         switch self {
+        case .gpt4(let model): return model.rawValue
         case .gpt3(let model): return model.rawValue
         case .codex(let model): return model.rawValue
         case .feature(let model): return model.rawValue
         case .chat(let model): return model.rawValue
         }
+    }
+
+    /// A set of models that can understand and generate natural language
+    ///
+    /// [GPT-4 Models OpenAI API Docs](https://beta.openai.com/docs/models/gpt-4)
+    public enum GPT4: String {
+
+        /// Most capable GPT-4 model. Can do any task the other models can do, often with higher quality, longer output and better instruction-following. Also supports inserting completions within text.
+        ///
+        /// > Model Name: text-davinci-003
+        case gpt4 = "text-davinci-003"
     }
     
     /// A set of models that can understand and generate natural language
