@@ -140,7 +140,7 @@ extension OpenAISwift {
         var urlComponents = URLComponents(url: URL(string: endpoint.baseURL())!, resolvingAgainstBaseURL: true)
         urlComponents?.path = endpoint.path
         var request = URLRequest(url: urlComponents!.url!)
-        request.timeoutInterval = 5
+        request.timeoutInterval = 6
         request.httpMethod = endpoint.method
         
         if let token = self.token {
